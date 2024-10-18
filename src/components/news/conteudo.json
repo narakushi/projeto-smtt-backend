@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_news_conteudos",
+  "info": {
+    "displayName": "conteudo",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "blocks"
+    }
+  }
+}
