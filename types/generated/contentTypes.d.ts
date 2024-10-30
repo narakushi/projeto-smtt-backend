@@ -362,39 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiNoticiaNoticia extends Schema.CollectionType {
-  collectionName: 'noticias';
-  info: {
-    singularName: 'noticia';
-    pluralName: 'noticias';
-    displayName: 'Noticia';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    titulo: Attribute.String & Attribute.Required;
-    conteudo: Attribute.Blocks & Attribute.Required;
-    imagens: Attribute.Media<'images', true> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::noticia.noticia',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::noticia.noticia',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -821,6 +788,220 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiEquipamentoEquipamento extends Schema.CollectionType {
+  collectionName: 'equipamentos';
+  info: {
+    singularName: 'equipamento';
+    pluralName: 'equipamentos';
+    displayName: 'Equipamento';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serie: Attribute.BigInteger & Attribute.Required;
+    tipo: Attribute.Text & Attribute.Required;
+    faixas: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::equipamento.equipamento',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::equipamento.equipamento',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEquipamentoEletronicoEquipamentoEletronico
+  extends Schema.SingleType {
+  collectionName: 'equipamento_eletronicos';
+  info: {
+    singularName: 'equipamento-eletronico';
+    pluralName: 'equipamento-eletronicos';
+    displayName: 'equipamentoEletronico';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    equipamentos: Attribute.Relation<
+      'api::equipamento-eletronico.equipamento-eletronico',
+      'oneToMany',
+      'api::equipamento.equipamento'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::equipamento-eletronico.equipamento-eletronico',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::equipamento-eletronico.equipamento-eletronico',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNoticiaNoticia extends Schema.CollectionType {
+  collectionName: 'noticias';
+  info: {
+    singularName: 'noticia';
+    pluralName: 'noticias';
+    displayName: 'Noticia';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    conteudo: Attribute.Blocks & Attribute.Required;
+    imagens: Attribute.Media<'images', true> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::noticia.noticia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::noticia.noticia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOuvidoriaOuvidoria extends Schema.SingleType {
+  collectionName: 'ouvidorias';
+  info: {
+    singularName: 'ouvidoria';
+    pluralName: 'ouvidorias';
+    displayName: 'ouvidoria';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    conteudoSobre: Attribute.Component<'page.conteudo'>;
+    imagemSobre: Attribute.Media<'images'> & Attribute.Required;
+    segundoParagrafo: Attribute.Blocks & Attribute.Required;
+    manifestacoes: Attribute.Component<'page.manifestacoes', true> &
+      Attribute.Required;
+    cardOuvidoria: Attribute.Component<'page.card-ouvidoria', true> &
+      Attribute.Required;
+    conteudoForm: Attribute.Component<'page.conteudo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ouvidoria.ouvidoria',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ouvidoria.ouvidoria',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPerguntasFreqPerguntasFreq extends Schema.SingleType {
+  collectionName: 'perguntas_freqs';
+  info: {
+    singularName: 'perguntas-freq';
+    pluralName: 'perguntas-freqs';
+    displayName: 'perguntasFreq';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    botaoFaq: Attribute.Component<'page.botao-faq', true> & Attribute.Required;
+    mascote: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::perguntas-freq.perguntas-freq',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::perguntas-freq.perguntas-freq',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSobreNosPageSobreNosPage extends Schema.SingleType {
+  collectionName: 'sobre_nos_pages';
+  info: {
+    singularName: 'sobre-nos-page';
+    pluralName: 'sobre-nos-pages';
+    displayName: 'sobreNosPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    imagemTitulo: Attribute.Component<'page.imagem-titulo'> &
+      Attribute.Required;
+    titulo: Attribute.String & Attribute.Required;
+    conteudo: Attribute.Component<'page.conteudo'>;
+    imagemOne: Attribute.Media<'images'> & Attribute.Required;
+    imagemTwo: Attribute.Media<'images'> & Attribute.Required;
+    legislacao: Attribute.Component<'page.legislacao'> & Attribute.Required;
+    organizacao: Attribute.Component<'page.conteudo'>;
+    descricaoOrganizacao: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::sobre-nos-page.sobre-nos-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::sobre-nos-page.sobre-nos-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -831,7 +1012,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::noticia.noticia': ApiNoticiaNoticia;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -840,6 +1020,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::equipamento.equipamento': ApiEquipamentoEquipamento;
+      'api::equipamento-eletronico.equipamento-eletronico': ApiEquipamentoEletronicoEquipamentoEletronico;
+      'api::noticia.noticia': ApiNoticiaNoticia;
+      'api::ouvidoria.ouvidoria': ApiOuvidoriaOuvidoria;
+      'api::perguntas-freq.perguntas-freq': ApiPerguntasFreqPerguntasFreq;
+      'api::sobre-nos-page.sobre-nos-page': ApiSobreNosPageSobreNosPage;
     }
   }
 }

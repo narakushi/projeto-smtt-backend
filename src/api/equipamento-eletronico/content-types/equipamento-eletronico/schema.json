@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "equipamento_eletronicos",
+  "info": {
+    "singularName": "equipamento-eletronico",
+    "pluralName": "equipamento-eletronicos",
+    "displayName": "equipamentoEletronico",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "equipamentos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipamento.equipamento"
+    }
+  }
+}

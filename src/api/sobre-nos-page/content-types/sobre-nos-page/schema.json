@@ -1,0 +1,62 @@
+{
+  "kind": "singleType",
+  "collectionName": "sobre_nos_pages",
+  "info": {
+    "singularName": "sobre-nos-page",
+    "pluralName": "sobre-nos-pages",
+    "displayName": "sobreNosPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imagemTitulo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.imagem-titulo",
+      "required": true
+    },
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "conteudo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.conteudo"
+    },
+    "imagemOne": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imagemTwo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "legislacao": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.legislacao",
+      "required": true
+    },
+    "organizacao": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.conteudo"
+    },
+    "descricaoOrganizacao": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

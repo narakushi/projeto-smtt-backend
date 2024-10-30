@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_conteudos",
+  "info": {
+    "displayName": "conteudo",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitulo": {
+      "type": "string",
+      "required": true
+    },
+    "conteudo": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

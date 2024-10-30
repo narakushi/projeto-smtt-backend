@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_card_ouvidorias",
+  "info": {
+    "displayName": "cardOuvidoria",
+    "icon": "volumeUp",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "text",
+      "required": true
+    },
+    "conteudo": {
+      "type": "text",
+      "required": true
+    },
+    "rodape": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_manifestacoes",
+  "info": {
+    "displayName": "manifestacoes",
+    "icon": "volumeUp"
+  },
+  "options": {},
+  "attributes": {
+    "tipo": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

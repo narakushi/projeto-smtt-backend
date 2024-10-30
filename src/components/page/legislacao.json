@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_page_legislacaos",
+  "info": {
+    "displayName": "legislacao",
+    "icon": "feather",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitulo": {
+      "type": "string",
+      "required": true
+    },
+    "botao": {
+      "displayName": "botao",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.botao",
+      "required": true
+    }
+  }
+}

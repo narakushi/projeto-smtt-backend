@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipamentos",
+  "info": {
+    "singularName": "equipamento",
+    "pluralName": "equipamentos",
+    "displayName": "Equipamento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serie": {
+      "type": "biginteger",
+      "required": true
+    },
+    "tipo": {
+      "type": "text",
+      "required": true
+    },
+    "faixas": {
+      "type": "integer"
+    }
+  }
+}

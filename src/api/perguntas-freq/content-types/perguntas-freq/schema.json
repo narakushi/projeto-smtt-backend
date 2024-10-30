@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "perguntas_freqs",
+  "info": {
+    "singularName": "perguntas-freq",
+    "pluralName": "perguntas-freqs",
+    "displayName": "perguntasFreq",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "botaoFaq": {
+      "displayName": "botaoFaq",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.botao-faq",
+      "required": true
+    },
+    "mascote": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

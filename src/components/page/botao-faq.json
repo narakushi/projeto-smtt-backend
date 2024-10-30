@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_botao_faqs",
+  "info": {
+    "displayName": "botaoFaq",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "pergunta": {
+      "type": "text",
+      "required": true
+    },
+    "resposta": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

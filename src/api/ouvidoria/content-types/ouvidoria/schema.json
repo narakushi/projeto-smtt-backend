@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "ouvidorias",
+  "info": {
+    "singularName": "ouvidoria",
+    "pluralName": "ouvidorias",
+    "displayName": "ouvidoria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "conteudoSobre": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.conteudo"
+    },
+    "imagemSobre": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "segundoParagrafo": {
+      "type": "blocks",
+      "required": true
+    },
+    "manifestacoes": {
+      "displayName": "manifestacoes",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.manifestacoes",
+      "required": true
+    },
+    "cardOuvidoria": {
+      "displayName": "cardOuvidoria",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.card-ouvidoria",
+      "required": true
+    },
+    "conteudoForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.conteudo"
+    }
+  }
+}
