@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contratos_na_integras",
+  "info": {
+    "singularName": "contratos-na-integra",
+    "pluralName": "contratos-na-integras",
+    "displayName": "contratosNaIntegra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "string",
+      "default": "Contrato"
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

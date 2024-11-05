@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fiscais_na_integras",
+  "info": {
+    "singularName": "fiscais-na-integra",
+    "pluralName": "fiscais-na-integras",
+    "displayName": "fiscaisNaIntegra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "text",
+      "default": "Fiscais",
+      "required": true
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -22,6 +22,34 @@
     },
     "faixas": {
       "type": "integer"
+    },
+    "endereco": {
+      "type": "text",
+      "required": true
+    },
+    "afericao": {
+      "type": "string",
+      "default": "ex: 02/2024 (Mês/Ano)",
+      "maxLength": 7,
+      "required": true
+    },
+    "estudo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "velocidade": {
+      "type": "integer",
+      "required": true
+    },
+    "positions": {
+      "displayName": "positions",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.positions"
     }
   }
 }

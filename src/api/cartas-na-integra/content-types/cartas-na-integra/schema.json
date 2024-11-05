@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cartas_na_integras",
+  "info": {
+    "singularName": "cartas-na-integra",
+    "pluralName": "cartas-na-integras",
+    "displayName": "cartasNaIntegra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "string",
+      "required": true,
+      "default": "Carta de Serviço"
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

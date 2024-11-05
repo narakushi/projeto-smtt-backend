@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_dados_card_transparencias",
+  "info": {
+    "displayName": "dadosCardTransparencia",
+    "icon": "oneToMany",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "cards": {
+      "displayName": "card",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.card"
+    }
+  }
+}

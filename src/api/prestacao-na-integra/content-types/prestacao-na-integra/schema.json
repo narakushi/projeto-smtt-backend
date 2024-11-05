@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prestacao_na_integras",
+  "info": {
+    "singularName": "prestacao-na-integra",
+    "pluralName": "prestacao-na-integras",
+    "displayName": "prestacaoNaIntegra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "string",
+      "required": true,
+      "default": "Prestação de Contas"
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

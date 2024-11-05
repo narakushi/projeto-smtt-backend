@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "processos_na_integras",
+  "info": {
+    "singularName": "processos-na-integra",
+    "pluralName": "processos-na-integras",
+    "displayName": "processosNaIntegra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "text",
+      "required": true,
+      "default": "Processos Licitatórios"
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

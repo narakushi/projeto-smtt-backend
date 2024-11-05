@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_cards",
+  "info": {
+    "displayName": "card",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

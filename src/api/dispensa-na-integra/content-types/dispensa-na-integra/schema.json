@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dispensa_na_integras",
+  "info": {
+    "singularName": "dispensa-na-integra",
+    "pluralName": "dispensa-na-integras",
+    "displayName": "dispensaNaIntegra",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "string",
+      "default": "Dispensa de Licitação",
+      "required": true
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

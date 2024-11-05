@@ -1,13 +1,14 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface NewsConteudo extends Schema.Component {
-  collectionName: 'components_news_conteudos';
+export interface PagePositions extends Schema.Component {
+  collectionName: 'components_page_positions';
   info: {
-    displayName: 'conteudo';
-    icon: 'bold';
+    displayName: 'positions';
+    icon: 'pinMap';
   };
   attributes: {
-    texto: Attribute.Blocks;
+    lat: Attribute.Float & Attribute.Required;
+    lng: Attribute.Float & Attribute.Required;
   };
 }
 
@@ -55,6 +56,18 @@ export interface PageEquipamentos extends Schema.Component {
   attributes: {};
 }
 
+export interface PageDadosCardTransparencia extends Schema.Component {
+  collectionName: 'components_page_dados_card_transparencias';
+  info: {
+    displayName: 'dadosCardTransparencia';
+    icon: 'oneToMany';
+    description: '';
+  };
+  attributes: {
+    cards: Attribute.Component<'page.card', true>;
+  };
+}
+
 export interface PageConteudo extends Schema.Component {
   collectionName: 'components_page_conteudos';
   info: {
@@ -65,6 +78,57 @@ export interface PageConteudo extends Schema.Component {
   attributes: {
     subtitulo: Attribute.String & Attribute.Required;
     conteudo: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface PageConteudoTextoMedia extends Schema.Component {
+  collectionName: 'components_page_conteudo_texto_medias';
+  info: {
+    displayName: 'conteudoTextoMedia';
+    icon: 'file';
+    description: '';
+  };
+  attributes: {
+    imagemEd: Attribute.Media<'images'> & Attribute.Required;
+    textoEd: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface PageConteudoMedia extends Schema.Component {
+  collectionName: 'components_page_conteudo_medias';
+  info: {
+    displayName: 'conteudoMedia';
+    icon: 'picture';
+    description: '';
+  };
+  attributes: {
+    titulo: Attribute.Text;
+    conteudo: Attribute.Blocks & Attribute.Required;
+    imagem: Attribute.Media<'images'>;
+  };
+}
+
+export interface PageConteudoEducacao extends Schema.Component {
+  collectionName: 'components_page_conteudo_educacaos';
+  info: {
+    displayName: 'conteudoEducacao';
+    icon: 'layout';
+  };
+  attributes: {
+    subtitulo: Attribute.String & Attribute.Required;
+    conteudoTextoMedia: Attribute.Component<'page.conteudo-texto-media', true>;
+  };
+}
+
+export interface PageCard extends Schema.Component {
+  collectionName: 'components_page_cards';
+  info: {
+    displayName: 'card';
+    icon: 'dashboard';
+  };
+  attributes: {
+    descricao: Attribute.Text & Attribute.Required;
+    url: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -95,6 +159,17 @@ export interface PageBotao extends Schema.Component {
   };
 }
 
+export interface PageBotaoTransparencia extends Schema.Component {
+  collectionName: 'components_page_botao_transparencias';
+  info: {
+    displayName: 'botaoTransparencia';
+    icon: 'earth';
+  };
+  attributes: {
+    texto: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface PageBotaoFaq extends Schema.Component {
   collectionName: 'components_page_botao_faqs';
   info: {
@@ -108,18 +183,36 @@ export interface PageBotaoFaq extends Schema.Component {
   };
 }
 
+export interface NewsConteudo extends Schema.Component {
+  collectionName: 'components_news_conteudos';
+  info: {
+    displayName: 'conteudo';
+    icon: 'bold';
+  };
+  attributes: {
+    texto: Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'news.conteudo': NewsConteudo;
+      'page.positions': PagePositions;
       'page.manifestacoes': PageManifestacoes;
       'page.legislacao': PageLegislacao;
       'page.imagem-titulo': PageImagemTitulo;
       'page.equipamentos': PageEquipamentos;
+      'page.dados-card-transparencia': PageDadosCardTransparencia;
       'page.conteudo': PageConteudo;
+      'page.conteudo-texto-media': PageConteudoTextoMedia;
+      'page.conteudo-media': PageConteudoMedia;
+      'page.conteudo-educacao': PageConteudoEducacao;
+      'page.card': PageCard;
       'page.card-ouvidoria': PageCardOuvidoria;
       'page.botao': PageBotao;
+      'page.botao-transparencia': PageBotaoTransparencia;
       'page.botao-faq': PageBotaoFaq;
+      'news.conteudo': NewsConteudo;
     }
   }
 }

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inexigibilidade_na_integras",
+  "info": {
+    "singularName": "inexigibilidade-na-integra",
+    "pluralName": "inexigibilidade-na-integras",
+    "displayName": "InexigibilidadeNaIntegra",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "text",
+      "required": true,
+      "default": "Inexigibilidade"
+    },
+    "descricao": {
+      "type": "text",
+      "required": true
+    },
+    "anexo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

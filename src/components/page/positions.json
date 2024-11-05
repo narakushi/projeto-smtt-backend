@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_positions",
+  "info": {
+    "displayName": "positions",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "lat": {
+      "type": "float",
+      "required": true
+    },
+    "lng": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

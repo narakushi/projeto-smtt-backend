@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "educacao_transitos",
+  "info": {
+    "singularName": "educacao-transito",
+    "pluralName": "educacao-transitos",
+    "displayName": "EducacaoTransito",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "slideImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "conteudoInicial": {
+      "type": "text",
+      "required": true
+    },
+    "conteudoEducacao": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.conteudo-educacao",
+      "required": true
+    }
+  }
+}

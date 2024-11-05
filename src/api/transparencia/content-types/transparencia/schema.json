@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "transparencias",
+  "info": {
+    "singularName": "transparencia",
+    "pluralName": "transparencias",
+    "displayName": "Transparencia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "imgAtricon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imgAtriconM": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imgAtriconS": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "botaoTransparencia": {
+      "displayName": "botaoTransparencia",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.botao-transparencia"
+    },
+    "cardsTransparencia": {
+      "displayName": "dadosCardTransparencia",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.dados-card-transparencia"
+    }
+  }
+}

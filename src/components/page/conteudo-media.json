@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_page_conteudo_medias",
+  "info": {
+    "displayName": "conteudoMedia",
+    "icon": "picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "text",
+      "required": false
+    },
+    "conteudo": {
+      "type": "blocks",
+      "required": true
+    },
+    "imagem": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

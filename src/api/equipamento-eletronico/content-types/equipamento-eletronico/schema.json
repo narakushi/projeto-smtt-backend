@@ -20,6 +20,10 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::equipamento.equipamento"
+    },
+    "subtitulo": {
+      "type": "text",
+      "required": true
     }
   }
 }

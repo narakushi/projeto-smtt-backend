@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_conteudo_educacaos",
+  "info": {
+    "displayName": "conteudoEducacao",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "subtitulo": {
+      "type": "string",
+      "required": true
+    },
+    "conteudoTextoMedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.conteudo-texto-media"
+    }
+  }
+}

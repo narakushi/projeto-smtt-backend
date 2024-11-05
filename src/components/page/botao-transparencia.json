@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_page_botao_transparencias",
+  "info": {
+    "displayName": "botaoTransparencia",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

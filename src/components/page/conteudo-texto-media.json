@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_conteudo_texto_medias",
+  "info": {
+    "displayName": "conteudoTextoMedia",
+    "icon": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imagemEd": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "textoEd": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
