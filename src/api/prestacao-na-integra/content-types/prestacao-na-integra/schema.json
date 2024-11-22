@@ -4,7 +4,8 @@
   "info": {
     "singularName": "prestacao-na-integra",
     "pluralName": "prestacao-na-integras",
-    "displayName": "prestacaoNaIntegra"
+    "displayName": "PrestacaoNaIntegra",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,12 +22,12 @@
       "required": true
     },
     "anexo": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

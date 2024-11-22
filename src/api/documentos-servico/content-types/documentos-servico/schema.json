@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "dispensa_na_integras",
+  "collectionName": "documentos_servicos",
   "info": {
-    "singularName": "dispensa-na-integra",
-    "pluralName": "dispensa-na-integras",
-    "displayName": "DispensaNaIntegra",
+    "singularName": "documentos-servico",
+    "pluralName": "documentos-servicos",
+    "displayName": "DocumentosServico",
     "description": ""
   },
   "options": {
@@ -12,20 +12,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "tipo": {
+    "titulo": {
       "type": "string",
-      "default": "Dispensa de Licitação",
       "required": true
     },
-    "descricao": {
-      "type": "text",
-      "required": true
-    },
-    "anexo": {
+    "documento": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": [
+        "images",
         "files"
       ]
     }

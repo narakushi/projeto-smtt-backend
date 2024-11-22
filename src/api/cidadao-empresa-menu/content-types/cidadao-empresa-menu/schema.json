@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "cidadao_empresa_menus",
+  "info": {
+    "singularName": "cidadao-empresa-menu",
+    "pluralName": "cidadao-empresa-menus",
+    "displayName": "CidadaoEmpresaMenu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.menu"
+    }
+  }
+}

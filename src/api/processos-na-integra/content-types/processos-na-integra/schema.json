@@ -4,7 +4,8 @@
   "info": {
     "singularName": "processos-na-integra",
     "pluralName": "processos-na-integras",
-    "displayName": "processosNaIntegra"
+    "displayName": "ProcessosNaIntegra",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,12 +22,12 @@
       "required": true
     },
     "anexo": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

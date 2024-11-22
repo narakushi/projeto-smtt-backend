@@ -4,7 +4,8 @@
   "info": {
     "singularName": "contratos-na-integra",
     "pluralName": "contratos-na-integras",
-    "displayName": "contratosNaIntegra"
+    "displayName": "ContratosNaIntegra",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,12 +21,12 @@
       "required": true
     },
     "anexo": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }

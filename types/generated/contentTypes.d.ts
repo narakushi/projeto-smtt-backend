@@ -829,7 +829,7 @@ export interface ApiAditivosNaIntegraAditivosNaIntegra
   info: {
     singularName: 'aditivos-na-integra';
     pluralName: 'aditivos-na-integras';
-    displayName: 'aditivosNaIntegra';
+    displayName: 'AditivosNaIntegra';
     description: '';
   };
   options: {
@@ -863,7 +863,8 @@ export interface ApiCartasNaIntegraCartasNaIntegra
   info: {
     singularName: 'cartas-na-integra';
     pluralName: 'cartas-na-integras';
-    displayName: 'cartasNaIntegra';
+    displayName: 'CartasNaIntegra';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -892,13 +893,46 @@ export interface ApiCartasNaIntegraCartasNaIntegra
   };
 }
 
+export interface ApiCidadaoEmpresaMenuCidadaoEmpresaMenu
+  extends Schema.SingleType {
+  collectionName: 'cidadao_empresa_menus';
+  info: {
+    singularName: 'cidadao-empresa-menu';
+    pluralName: 'cidadao-empresa-menus';
+    displayName: 'CidadaoEmpresaMenu';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    menu: Attribute.Component<'page.menu', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cidadao-empresa-menu.cidadao-empresa-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cidadao-empresa-menu.cidadao-empresa-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContratosNaIntegraContratosNaIntegra
   extends Schema.CollectionType {
   collectionName: 'contratos_na_integras';
   info: {
     singularName: 'contratos-na-integra';
     pluralName: 'contratos-na-integras';
-    displayName: 'contratosNaIntegra';
+    displayName: 'ContratosNaIntegra';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -931,7 +965,7 @@ export interface ApiDispensaNaIntegraDispensaNaIntegra
   info: {
     singularName: 'dispensa-na-integra';
     pluralName: 'dispensa-na-integras';
-    displayName: 'dispensaNaIntegra';
+    displayName: 'DispensaNaIntegra';
     description: '';
   };
   options: {
@@ -954,6 +988,39 @@ export interface ApiDispensaNaIntegraDispensaNaIntegra
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::dispensa-na-integra.dispensa-na-integra',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDocumentosServicoDocumentosServico
+  extends Schema.CollectionType {
+  collectionName: 'documentos_servicos';
+  info: {
+    singularName: 'documentos-servico';
+    pluralName: 'documentos-servicos';
+    displayName: 'DocumentosServico';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    documento: Attribute.Media<'images' | 'files'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::documentos-servico.documentos-servico',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::documentos-servico.documentos-servico',
       'oneToOne',
       'admin::user'
     > &
@@ -1083,7 +1150,8 @@ export interface ApiFiscaisNaIntegraFiscaisNaIntegra
   info: {
     singularName: 'fiscais-na-integra';
     pluralName: 'fiscais-na-integras';
-    displayName: 'fiscaisNaIntegra';
+    displayName: 'FiscaisNaIntegra';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1146,6 +1214,44 @@ export interface ApiInexigibilidadeNaIntegraInexigibilidadeNaIntegra
   };
 }
 
+export interface ApiMenuBarraNavagacaoMenuBarraNavagacao
+  extends Schema.CollectionType {
+  collectionName: 'menu_barra_navagacaos';
+  info: {
+    singularName: 'menu-barra-navagacao';
+    pluralName: 'menu-barra-navagacaos';
+    displayName: 'MenuBarraNavagacao';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    url: Attribute.Text;
+    menu: Attribute.Component<'page.menu', true>;
+    guiaAlvo: Attribute.Enumeration<
+      ['self (abrir na mesma guia)', 'blank (abrir em outra guia)']
+    > &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::menu-barra-navagacao.menu-barra-navagacao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::menu-barra-navagacao.menu-barra-navagacao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNoticiaNoticia extends Schema.CollectionType {
   collectionName: 'noticias';
   info: {
@@ -1161,6 +1267,8 @@ export interface ApiNoticiaNoticia extends Schema.CollectionType {
     titulo: Attribute.String & Attribute.Required;
     conteudo: Attribute.Blocks & Attribute.Required;
     imagens: Attribute.Media<'images', true> & Attribute.Required;
+    slug: Attribute.UID<'api::noticia.noticia', 'titulo'> & Attribute.Required;
+    conteudoSimples: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1251,13 +1359,46 @@ export interface ApiPerguntasFreqPerguntasFreq extends Schema.SingleType {
   };
 }
 
+export interface ApiPoliticaPrivacidadePoliticaPrivacidade
+  extends Schema.SingleType {
+  collectionName: 'politica_privacidades';
+  info: {
+    singularName: 'politica-privacidade';
+    pluralName: 'politica-privacidades';
+    displayName: 'PoliticaPrivacidade';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.Text & Attribute.Required;
+    conteudo: Attribute.Component<'page.conteudo', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::politica-privacidade.politica-privacidade',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::politica-privacidade.politica-privacidade',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPrestacaoNaIntegraPrestacaoNaIntegra
   extends Schema.CollectionType {
   collectionName: 'prestacao_na_integras';
   info: {
     singularName: 'prestacao-na-integra';
     pluralName: 'prestacao-na-integras';
-    displayName: 'prestacaoNaIntegra';
+    displayName: 'PrestacaoNaIntegra';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1292,7 +1433,8 @@ export interface ApiProcessosNaIntegraProcessosNaIntegra
   info: {
     singularName: 'processos-na-integra';
     pluralName: 'processos-na-integras';
-    displayName: 'processosNaIntegra';
+    displayName: 'ProcessosNaIntegra';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1314,6 +1456,74 @@ export interface ApiProcessosNaIntegraProcessosNaIntegra
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::processos-na-integra.processos-na-integra',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServicosSecaoServicosSecao extends Schema.CollectionType {
+  collectionName: 'servicos_secaos';
+  info: {
+    singularName: 'servicos-secao';
+    pluralName: 'servicos-secaos';
+    displayName: 'ServicosSecao';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    url: Attribute.Text;
+    icone: Attribute.Media<'images'> & Attribute.Required;
+    guiaAlvo: Attribute.Enumeration<
+      ['self (abrir na mesma guia)', 'blank (abrir em outra guia)']
+    > &
+      Attribute.Required;
+    documento: Attribute.Media<'files'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::servicos-secao.servicos-secao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::servicos-secao.servicos-secao',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServidorMenuServidorMenu extends Schema.SingleType {
+  collectionName: 'servidor_menus';
+  info: {
+    singularName: 'servidor-menu';
+    pluralName: 'servidor-menus';
+    displayName: 'ServidorMenu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    menu: Attribute.Component<'page.menu', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::servidor-menu.servidor-menu',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::servidor-menu.servidor-menu',
       'oneToOne',
       'admin::user'
     > &
@@ -1457,18 +1667,24 @@ declare module '@strapi/types' {
       'api::acessibilidade.acessibilidade': ApiAcessibilidadeAcessibilidade;
       'api::aditivos-na-integra.aditivos-na-integra': ApiAditivosNaIntegraAditivosNaIntegra;
       'api::cartas-na-integra.cartas-na-integra': ApiCartasNaIntegraCartasNaIntegra;
+      'api::cidadao-empresa-menu.cidadao-empresa-menu': ApiCidadaoEmpresaMenuCidadaoEmpresaMenu;
       'api::contratos-na-integra.contratos-na-integra': ApiContratosNaIntegraContratosNaIntegra;
       'api::dispensa-na-integra.dispensa-na-integra': ApiDispensaNaIntegraDispensaNaIntegra;
+      'api::documentos-servico.documentos-servico': ApiDocumentosServicoDocumentosServico;
       'api::educacao-transito.educacao-transito': ApiEducacaoTransitoEducacaoTransito;
       'api::equipamento.equipamento': ApiEquipamentoEquipamento;
       'api::equipamento-eletronico.equipamento-eletronico': ApiEquipamentoEletronicoEquipamentoEletronico;
       'api::fiscais-na-integra.fiscais-na-integra': ApiFiscaisNaIntegraFiscaisNaIntegra;
       'api::inexigibilidade-na-integra.inexigibilidade-na-integra': ApiInexigibilidadeNaIntegraInexigibilidadeNaIntegra;
+      'api::menu-barra-navagacao.menu-barra-navagacao': ApiMenuBarraNavagacaoMenuBarraNavagacao;
       'api::noticia.noticia': ApiNoticiaNoticia;
       'api::ouvidoria.ouvidoria': ApiOuvidoriaOuvidoria;
       'api::perguntas-freq.perguntas-freq': ApiPerguntasFreqPerguntasFreq;
+      'api::politica-privacidade.politica-privacidade': ApiPoliticaPrivacidadePoliticaPrivacidade;
       'api::prestacao-na-integra.prestacao-na-integra': ApiPrestacaoNaIntegraPrestacaoNaIntegra;
       'api::processos-na-integra.processos-na-integra': ApiProcessosNaIntegraProcessosNaIntegra;
+      'api::servicos-secao.servicos-secao': ApiServicosSecaoServicosSecao;
+      'api::servidor-menu.servidor-menu': ApiServidorMenuServidorMenu;
       'api::sobre-nos-page.sobre-nos-page': ApiSobreNosPageSobreNosPage;
       'api::transparencia.transparencia': ApiTransparenciaTransparencia;
       'api::vaga-especial.vaga-especial': ApiVagaEspecialVagaEspecial;

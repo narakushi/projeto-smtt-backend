@@ -1,0 +1,7 @@
+/**
+ * documentos-servico router
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreRouter('api::documentos-servico.documentos-servico');

@@ -21,12 +21,21 @@
       "required": true
     },
     "imagens": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
       "required": true
+    },
+    "conteudoSimples": {
+      "type": "text",
+      "required": false
     }
   }
 }

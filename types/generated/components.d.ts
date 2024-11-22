@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface NewsConteudo extends Schema.Component {
+  collectionName: 'components_news_conteudos';
+  info: {
+    displayName: 'conteudo';
+    icon: 'bold';
+  };
+  attributes: {
+    texto: Attribute.Blocks;
+  };
+}
+
 export interface PagePositions extends Schema.Component {
   collectionName: 'components_page_positions';
   info: {
@@ -9,6 +20,24 @@ export interface PagePositions extends Schema.Component {
   attributes: {
     lat: Attribute.Float & Attribute.Required;
     lng: Attribute.Float & Attribute.Required;
+  };
+}
+
+export interface PageMenu extends Schema.Component {
+  collectionName: 'components_page_menus';
+  info: {
+    displayName: 'menu';
+    icon: 'layer';
+    description: '';
+  };
+  attributes: {
+    titulo: Attribute.String & Attribute.Required;
+    url: Attribute.Text;
+    documento: Attribute.Media<'files'>;
+    guiaAlvo: Attribute.Enumeration<
+      ['self (abrir na mesma guia)', 'blank (abrir em outra guia)']
+    > &
+      Attribute.Required;
   };
 }
 
@@ -54,6 +83,19 @@ export interface PageEquipamentos extends Schema.Component {
     displayName: 'equipamentos';
   };
   attributes: {};
+}
+
+export interface PageDocumento extends Schema.Component {
+  collectionName: 'components_page_documentos';
+  info: {
+    displayName: 'documento';
+    icon: 'filePdf';
+    description: '';
+  };
+  attributes: {
+    titulo: Attribute.String;
+    documento: Attribute.Media<'images' | 'files'> & Attribute.Required;
+  };
 }
 
 export interface PageDadosCardTransparencia extends Schema.Component {
@@ -183,25 +225,17 @@ export interface PageBotaoFaq extends Schema.Component {
   };
 }
 
-export interface NewsConteudo extends Schema.Component {
-  collectionName: 'components_news_conteudos';
-  info: {
-    displayName: 'conteudo';
-    icon: 'bold';
-  };
-  attributes: {
-    texto: Attribute.Blocks;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'news.conteudo': NewsConteudo;
       'page.positions': PagePositions;
+      'page.menu': PageMenu;
       'page.manifestacoes': PageManifestacoes;
       'page.legislacao': PageLegislacao;
       'page.imagem-titulo': PageImagemTitulo;
       'page.equipamentos': PageEquipamentos;
+      'page.documento': PageDocumento;
       'page.dados-card-transparencia': PageDadosCardTransparencia;
       'page.conteudo': PageConteudo;
       'page.conteudo-texto-media': PageConteudoTextoMedia;
@@ -212,7 +246,6 @@ declare module '@strapi/types' {
       'page.botao': PageBotao;
       'page.botao-transparencia': PageBotaoTransparencia;
       'page.botao-faq': PageBotaoFaq;
-      'news.conteudo': NewsConteudo;
     }
   }
 }
