@@ -50,11 +50,11 @@ export default ({ env }) => {
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
+        host: env('DATABASE_HOST', 'dpg-ct2c89dsvqrc73ds84ng-a'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        database: env('DATABASE_NAME', 'smtt_banco_teste'),
+        user: env('DATABASE_USERNAME', 'smtt_banco_teste_user'),
+        password: env('DATABASE_PASSWORD', '6Bj5JBXlSK0Gyf0UJUl9lgal9MmCiw1G'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),

@@ -1,16 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface NewsConteudo extends Schema.Component {
-  collectionName: 'components_news_conteudos';
-  info: {
-    displayName: 'conteudo';
-    icon: 'bold';
-  };
-  attributes: {
-    texto: Attribute.Blocks;
-  };
-}
-
 export interface PagePositions extends Schema.Component {
   collectionName: 'components_page_positions';
   info: {
@@ -225,10 +214,20 @@ export interface PageBotaoFaq extends Schema.Component {
   };
 }
 
+export interface NewsConteudo extends Schema.Component {
+  collectionName: 'components_news_conteudos';
+  info: {
+    displayName: 'conteudo';
+    icon: 'bold';
+  };
+  attributes: {
+    texto: Attribute.Blocks;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'news.conteudo': NewsConteudo;
       'page.positions': PagePositions;
       'page.menu': PageMenu;
       'page.manifestacoes': PageManifestacoes;
@@ -246,6 +245,7 @@ declare module '@strapi/types' {
       'page.botao': PageBotao;
       'page.botao-transparencia': PageBotaoTransparencia;
       'page.botao-faq': PageBotaoFaq;
+      'news.conteudo': NewsConteudo;
     }
   }
 }
