@@ -1268,7 +1268,6 @@ export interface ApiNoticiaNoticia extends Schema.CollectionType {
     conteudo: Attribute.Blocks & Attribute.Required;
     imagens: Attribute.Media<'images', true> & Attribute.Required;
     slug: Attribute.UID<'api::noticia.noticia', 'titulo'> & Attribute.Required;
-    conteudoSimples: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1543,8 +1542,6 @@ export interface ApiSobreNosPageSobreNosPage extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    imagemTitulo: Attribute.Component<'page.imagem-titulo'> &
-      Attribute.Required;
     titulo: Attribute.String & Attribute.Required;
     conteudo: Attribute.Component<'page.conteudo'>;
     imagemOne: Attribute.Media<'images'> & Attribute.Required;
